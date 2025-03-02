@@ -21,3 +21,4 @@ npm run build
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
 >>>>>>> f9647b8 (init)
+"# LastFront" 
