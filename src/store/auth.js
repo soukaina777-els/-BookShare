@@ -2,12 +2,21 @@ import axios from "axios";
 
 const state = {
   user: null, // Utilisateur connecté
+<<<<<<< HEAD
   token: localStorage.getItem("token") || null, 
 };
 
 const getters = {
   isAuthenticated: (state) => !!state.token, 
   getUser: (state) => state.user, 
+=======
+  token: localStorage.getItem("token") || null, // Stocker le token JWT
+};
+
+const getters = {
+  isAuthenticated: (state) => !!state.token, // Vérifie si l'user est connecté
+  getUser: (state) => state.user, // Récupère les infos utilisateur
+>>>>>>> feeedbd (Mise à jour du projet)
 };
 
 const mutations = {
@@ -25,11 +34,18 @@ const mutations = {
   },
 };
 
+<<<<<<< HEAD
 
 const actions = {
   async login({ commit }, credentials) {
     try {
       const response = await axios.post("http://localhost:3000/api/auth/login", credentials);
+=======
+const actions = {
+  async login({ commit }, credentials) {
+    try {
+      const response = await axios.post("http://localhost:5000/api/auth/login", credentials);
+>>>>>>> feeedbd (Mise à jour du projet)
       commit("SET_USER", response.data.user);
       commit("SET_TOKEN", response.data.token);
     } catch (error) {
@@ -39,18 +55,26 @@ const actions = {
 
   async register({ commit }, userData) {
     try {
+<<<<<<< HEAD
       const response = await axios.post("http://localhost:3000/api/auth/inscription", userData);
+=======
+      const response = await axios.post("http://localhost:5000/api/auth/inscription", userData);
+>>>>>>> feeedbd (Mise à jour du projet)
       commit("SET_USER", response.data.user);
       commit("SET_TOKEN", response.data.token);
     } catch (error) {
       console.error("Erreur d'inscription ❌", error.response?.data);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> feeedbd (Mise à jour du projet)
   },
 
   logout({ commit }) {
     commit("LOGOUT");
   },
+<<<<<<< HEAD
 
   async resetPassword({ commit }, email) {
     try {
@@ -63,6 +87,10 @@ const actions = {
 };
 
 
+=======
+};
+
+>>>>>>> feeedbd (Mise à jour du projet)
 export default {
   namespaced: true, // Permet d'appeler les actions avec "auth/login"
   state,
@@ -70,4 +98,7 @@ export default {
   mutations,
   actions,
 };
+<<<<<<< HEAD
 
+=======
+>>>>>>> feeedbd (Mise à jour du projet)

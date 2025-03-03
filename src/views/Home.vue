@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
 
     <div class="home-container">
       <div class="banner">
@@ -148,3 +149,11 @@
   }
   
   </style>
+=======
+    <div>
+      <h1>Accueil</h1>
+      <p>Bienvenue sur Book Share !</p>
+    </div>
+  </template>
+  
+>>>>>>> feeedbd (Mise à jour du projet)
