@@ -3,10 +3,7 @@
       <h2>Réinitialiser le mot de passe</h2>
       <form @submit.prevent="resetPassword">
         <input v-model="email" type="email" placeholder="Entrez votre email" required />
-<<<<<<< HEAD
         <input  v-model="dateNaissance" type="text" placeholder="Enter votre date naissance">
-=======
->>>>>>> feeedbd (Mise à jour du projet)
         <button type="submit">Envoyer le lien</button>
       </form>
       <p v-if="message" style="color: green;">{{ message }}</p>
@@ -21,10 +18,7 @@
     data() {
       return {
         email: "",
-<<<<<<< HEAD
         dateNaissance:"",
-=======
->>>>>>> feeedbd (Mise à jour du projet)
         message: null,
         errorMessage: null,
       };
