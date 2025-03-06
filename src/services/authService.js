@@ -6,7 +6,7 @@ const authService = {
   // ✅ Inscription d'un nouvel utilisateur
   async register(nom, email, motDePasse)  {
     try {
-      const response = await axios.post(`${API_URL}/inscription`, {
+      const response = await axios.post(`${API_URL}/authentification/inscription`, {
         nom,
         email,
         motDePasse
@@ -20,7 +20,7 @@ const authService = {
   // ✅ Connexion utilisateur
   async login(email, motDePasse) {
     try {
-      const response = await axios.post(`${API_URL}/login`, {
+      const response = await axios.post(`${API_URL}/authentification/login`, {
         email,
         motDePasse
       });
@@ -33,7 +33,7 @@ const authService = {
   // ✅ Déconnexion
   async logout() {
     try {
-      await axios.post(`${API_URL}/logout`);
+      await axios.post(`${API_URL}/authentification/logout`);
     } catch (error) {
       throw error.response?.data || { message: "Erreur de connexion au serveur" };
     }
@@ -42,7 +42,7 @@ const authService = {
   // ✅ Récupération des infos utilisateur
   async getUser(id) {
     try {
-      const response = await axios.get(`${API_URL}/utilisateur/${id}/get`);
+      const response = await axios.get(`${API_URL}/utilisateurs/${id}/get`);
       return response.data;
     } catch (error) {
       throw error.response?.data || { message: "Erreur de connexion au serveur" };
@@ -52,7 +52,7 @@ const authService = {
   // ✅ Modification du compte utilisateur
   async updateUser(id, nom, email, motDePasse) {
     try {
-      const response = await axios.put(`${API_URL}/utilisateur/${id}/changement`, {
+      const response = await axios.put(`${API_URL}/utilisateurs/${id}/changement`, {
         nom,
         email,
         motDePasse
@@ -66,7 +66,7 @@ const authService = {
   // ✅ Suppression du compte utilisateur
   async deleteUser(id) {
     try {
-      const response = await axios.delete(`${API_URL}/utilisateur/${id}/delete`);
+      const response = await axios.delete(`${API_URL}/utilisateurs/${id}/delete`);
       return response.data;
     } catch (error) {
       throw error.response?.data || { message: "Erreur de connexion au serveur" };
